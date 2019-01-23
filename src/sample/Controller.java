@@ -16,6 +16,8 @@ public class Controller {
     @FXML Button start;
 
     private char letra;
+    private char turnotext;
+
     Random random = new Random();
 
     private boolean turno = random.nextBoolean();
@@ -29,17 +31,19 @@ public class Controller {
 
     public void start(){
 
-        turnoPlayer.setText("Es el turno de: "+letra);
+        turno();
     }
 
     public boolean turno(){
         if (turno == true) {
             letra ='X';
-            turnoPlayer.setText("Es el turno de: "+letra);
+            turnotext = 'O';
+            turnoPlayer.setText("Es el turno de: " + turnotext);
             turno = false;
         }else {
             letra ='O';
-            turnoPlayer.setText("Es el turno de: "+letra);
+            turnotext = 'X';
+            turnoPlayer.setText("Es el turno de: "+ turnotext);
             turno = true;
         }
         return true;

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.image.*?>
@@ -21,31 +22,17 @@
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <Button fx:id="b5" layoutX="154.0" layoutY="113.0" mnemonicParsing="false" onAction="#clickButton" prefHeight="62.0" prefWidth="62.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Button fx:id="b2" layoutX="154.0" layoutY="88.0" mnemonicParsing="false" onAction="#clickButton" prefHeight="62.0" prefWidth="62.0" GridPane.columnIndex="1" />
-            <Button fx:id="b4" layoutX="92.0" layoutY="113.0" mnemonicParsing="false" onAction="#clickButton" prefHeight="62.0" prefWidth="62.0" GridPane.rowIndex="1" />
-            <Button fx:id="b1" layoutX="92.0" layoutY="88.0" mnemonicParsing="false" onAction="#clickButton" prefHeight="62.0" prefWidth="62.0" />
-            <Button fx:id="b9" layoutX="216.0" layoutY="138.0" mnemonicParsing="false" onAction="#clickButton" prefHeight="62.0" prefWidth="62.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <Button fx:id="b6" layoutX="216.0" layoutY="113.0" mnemonicParsing="false" onAction="#clickButton" prefHeight="62.0" prefWidth="62.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Button fx:id="b3" layoutX="216.0" layoutY="88.0" mnemonicParsing="false" onAction="#clickButton" prefHeight="62.0" prefWidth="62.0" GridPane.columnIndex="2" />
-            <Button fx:id="b8" layoutX="154.0" layoutY="138.0" mnemonicParsing="false" onAction="#clickButton" prefHeight="62.0" prefWidth="62.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Button fx:id="b7" layoutX="92.0" layoutY="138.0" mnemonicParsing="false" onAction="#clickButton" prefHeight="62.0" prefWidth="62.0" GridPane.rowIndex="2" />
+            <Button fx:id="btn5" layoutX="154.0" layoutY="113.0" mnemonicParsing="false" onAction="#clickButton" prefHeight="62.0" prefWidth="62.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button fx:id="btn2" layoutX="154.0" layoutY="88.0" mnemonicParsing="false" onAction="#clickButton" prefHeight="62.0" prefWidth="62.0" GridPane.columnIndex="1" />
+            <Button fx:id="btn4" layoutX="92.0" layoutY="113.0" mnemonicParsing="false" onAction="#clickButton" prefHeight="62.0" prefWidth="62.0" GridPane.rowIndex="1" />
+            <Button fx:id="btn1" layoutX="92.0" layoutY="88.0" mnemonicParsing="false" onAction="#clickButton" prefHeight="62.0" prefWidth="62.0" />
+            <Button fx:id="btn9" layoutX="216.0" layoutY="138.0" mnemonicParsing="false" onAction="#clickButton" prefHeight="62.0" prefWidth="62.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Button fx:id="btn6" layoutX="216.0" layoutY="113.0" mnemonicParsing="false" onAction="#clickButton" prefHeight="62.0" prefWidth="62.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Button fx:id="btn3" layoutX="216.0" layoutY="88.0" mnemonicParsing="false" onAction="#clickButton" prefHeight="62.0" prefWidth="62.0" GridPane.columnIndex="2" />
+            <Button fx:id="btn8" layoutX="154.0" layoutY="138.0" mnemonicParsing="false" onAction="#clickButton" prefHeight="62.0" prefWidth="62.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Button fx:id="btn7" layoutX="92.0" layoutY="138.0" mnemonicParsing="false" onAction="#clickButton" prefHeight="62.0" prefWidth="62.0" GridPane.rowIndex="2" />
          </children>
       </GridPane>
-      <ImageView fitHeight="200.0" fitWidth="351.0" layoutX="234.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@fondo.jpg" />
-         </image>
-      </ImageView>
-      <RadioButton fx:id="cvc" layoutX="282.0" layoutY="126.0" mnemonicParsing="false" text="Computer VS Computer" textAlignment="JUSTIFY" textFill="WHITE" />
-      <RadioButton fx:id="hvh" layoutX="282.0" layoutY="154.0" mnemonicParsing="false" text="Human VS Human" textAlignment="JUSTIFY" textFill="WHITE" />
-      <RadioButton fx:id="hvc" layoutX="282.0" layoutY="182.0" mnemonicParsing="false" text="Human VS Computer" textAlignment="JUSTIFY" textFill="WHITE" />
-      <Button fx:id="start" layoutX="320.0" layoutY="208.0" mnemonicParsing="false" onAction="#start" prefHeight="29.0" prefWidth="104.0" text="Start">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Button>
-      <Button layoutX="521.0" layoutY="96.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0" />
       <MenuBar layoutY="3.0" prefHeight="29.0" prefWidth="603.0">
         <menus>
           <Menu mnemonicParsing="false" text="File">
@@ -60,6 +47,26 @@
           </Menu>
         </menus>
       </MenuBar>
-      <Text fx:id="turnoPlayer" layoutX="14.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="201.0" />
+      <Label fx:id="turnoPlayer" layoutX="14.0" layoutY="46.0" prefHeight="17.0" prefWidth="201.0" />
+      <Group layoutX="313.0" layoutY="102.0">
+         <children>
+            <ImageView fitHeight="200.0" fitWidth="351.0" layoutX="-83.0" layoutY="-37.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@fondo.jpg" />
+               </image>
+            </ImageView>
+            <RadioButton fx:id="cvc" layoutX="-25.0" layoutY="25.0" mnemonicParsing="false" selected="true" text="Computer VS Computer" textAlignment="JUSTIFY" textFill="WHITE" />
+            <RadioButton fx:id="hvh" layoutX="-25.0" layoutY="49.0" mnemonicParsing="false" text="Human VS Human" textAlignment="JUSTIFY" textFill="WHITE" />
+            <Button fx:id="start" layoutX="1.0" layoutY="105.0" mnemonicParsing="false" onAction="#start" prefHeight="29.0" prefWidth="104.0" text="Start">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <RadioButton fx:id="hvc" layoutX="-25.0" layoutY="73.0" mnemonicParsing="false" text="Human VS Computer" textAlignment="JUSTIFY" textFill="WHITE" />
+         </children>
+         <effect>
+            <ColorAdjust />
+         </effect>
+      </Group>
    </children>
 </AnchorPane>

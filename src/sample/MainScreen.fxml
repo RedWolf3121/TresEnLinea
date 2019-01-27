@@ -47,7 +47,7 @@
           </Menu>
         </menus>
       </MenuBar>
-      <Label fx:id="turnoPlayer" layoutX="14.0" layoutY="46.0" prefHeight="17.0" prefWidth="201.0" />
+      <Label fx:id="ganador" layoutX="14.0" layoutY="46.0" prefHeight="17.0" prefWidth="201.0" />
       <Group layoutX="313.0" layoutY="102.0">
          <children>
             <ImageView fitHeight="200.0" fitWidth="351.0" layoutX="-83.0" layoutY="-37.0" pickOnBounds="true" preserveRatio="true">

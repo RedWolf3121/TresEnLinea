@@ -13,11 +13,11 @@ public class Controller {
 
     public char turno = 'O';
 
-    int z = 0;
+    int x = 0;
     int i = 0;
 
     @FXML
-    public Label turnoPlayer;
+    public Label ganador;
 
     @FXML
     public RadioButton cvc, hvh, hvc;
@@ -46,12 +46,12 @@ public class Controller {
     public void start(ActionEvent event) {
 
         if (cvc.isSelected()) {
-            z = 0;
+            x = 0;
             BorrarTaula();
             while ((btn1.getText().equals("") || btn2.getText().equals("") || btn3.getText().equals("")
                     || btn4.getText().equals("") || btn5.getText().equals("") || btn6.getText().equals("")
                     || btn7.getText().equals("") || btn8.getText().equals("") || btn9.getText().equals(""))
-                    && z == 0) {
+                    && x == 0) {
                 int aleatori = (int) (Math.random() * 9);
 
                 if (AllButtons.get(aleatori).getText().equals("")) {
@@ -90,19 +90,33 @@ public class Controller {
             }
         }else if (hvc.isSelected()) {
             Button butt = (Button) event.getSource();
-            while (butt.getText().equals("")) {
-                if (butt.getText().equals("")) {
-                    butt.setText(String.valueOf(turno));
-                    if (turno == 'X') {
+
+            x = 0;
+            BorrarTaula();
+
+            if (turno == 'X' ){
+                if (btn1.getText().equals("") || btn2.getText().equals("") || btn3.getText().equals("")
+                        || btn4.getText().equals("") || btn5.getText().equals("") || btn6.getText().equals("")
+                        || btn7.getText().equals("") || btn8.getText().equals("") || btn9.getText().equals("")
+                        && x == 0) {
+                    int aleatori = (int) (Math.random() * 9);
+
+                    if (AllButtons.get(aleatori).getText().equals("")) {
+                        butt.setText(String.valueOf(turno));
                         turno = 'O';
-                    } else
-                        turno = 'X';
+                    }
+                    Comprobacio();
                 }
-                Comprobacio();
+            }else if (turno == 'O'){
+                    if (butt.getText().equals("")) {
+                        butt.setText(String.valueOf(turno));
+                        turno = 'X';
+                    }
+                    Comprobacio();
+                }
             }
         }
 
-    }
 
     public void Comprobacio() {
 
@@ -110,35 +124,35 @@ public class Controller {
                 (btn1.getText().equals(btn3.getText()))) && !btn1.getText().equals("")) {
             System.out.println("Guanyador: " + btn1.getText());
             if (btn1.getText().equals("X")) {
-                turnoPlayer.setText("Guanyador: X");
+                ganador.setText("Guanyador: X");
 
             } else if (btn1.getText().equals("O")) {
-                turnoPlayer.setText("Guanyador: O");
+                ganador.setText("Guanyador: O");
             }
-            z = 1;
+            x = 1;
             return;
 
         } else if ((btn1.getText().equals(btn4.getText()) &&
                 (btn1.getText().equals(btn7.getText()))) && !btn1.getText().equals("")) {
             System.out.println("Guanyador: " + btn1.getText());
             if (btn1.getText().equals("X")) {
-                turnoPlayer.setText("Guanyador: X");
+                ganador.setText("Guanyador: X");
 
             } else if (btn1.getText().equals("O")) {
-                turnoPlayer.setText("Guanyador: O");
+                ganador.setText("Guanyador: O");
             }
-            z = 1;
+            x = 1;
             return;
 
         } else if ((btn1.getText().equals(btn5.getText()) &&
                 (btn1.getText().equals(btn9.getText()))) && !btn1.getText().equals("")) {
             System.out.println("Guanyador: " + btn1.getText());
             if (btn1.getText().equals("X")) {
-                turnoPlayer.setText("Guanyador: X");
+                ganador.setText("Guanyador: X");
             } else if (btn1.getText().equals("O")) {
-                turnoPlayer.setText("Guanyador: O");
+                ganador.setText("Guanyador: O");
             }
-            z = 1;
+            x = 1;
             return;
 
         } else if ((btn1.getText().equals(btn5.getText()) &&
@@ -146,12 +160,12 @@ public class Controller {
         {
             System.out.println("Guanyador: " + btn1.getText());
             if (btn1.getText().equals("X")) {
-                turnoPlayer.setText("Guanyador: X");
+                ganador.setText("Guanyador: X");
 
             } else if (btn1.getText().equals("O")) {
-                turnoPlayer.setText("Guanyador: O");
+                ganador.setText("Guanyador: O");
             }
-            z = 1;
+            x = 1;
             return;
 
         } else if ((btn4.getText().equals(btn5.getText()) &&
@@ -159,12 +173,12 @@ public class Controller {
 
             System.out.println("Guanyador: " + btn4.getText());
             if (btn4.getText().equals("X")) {
-                turnoPlayer.setText("Guanyador: X");
+                ganador.setText("Guanyador: X");
 
             } else if (btn4.getText().equals("O")) {
-                turnoPlayer.setText("Guanyador: O");
+                ganador.setText("Guanyador: O");
             }
-            z = 1;
+            x = 1;
             return;
 
         } else if ((btn2.getText().equals(btn5.getText()) &&
@@ -172,12 +186,12 @@ public class Controller {
 
             System.out.println("Guanyador: " + btn2.getText());
             if (btn2.getText().equals("X")) {
-                turnoPlayer.setText("Guanyador: X");
+                ganador.setText("Guanyador: X");
 
             } else if (btn2.getText().equals("O")) {
-                turnoPlayer.setText("Guanyador: O");
+                ganador.setText("Guanyador: O");
             }
-            z = 1;
+            x = 1;
             return;
 
         } else if ((btn7.getText().equals(btn8.getText()) &&
@@ -185,12 +199,12 @@ public class Controller {
 
             System.out.println("Guanyador: " + btn7.getText());
             if (btn7.getText().equals("X")) {
-                turnoPlayer.setText("Guanyador: X");
+                ganador.setText("Guanyador: X");
 
             } else if (btn7.getText().equals("O")) {
-                turnoPlayer.setText("Guanyador: O");
+                ganador.setText("Guanyador: O");
             }
-            z = 1;
+            x = 1;
             return;
         } else if ((btn7.getText().equals(btn5.getText()) &&
                 (btn7.getText().equals(btn3.getText()))) && !btn7.getText().equals(""))
@@ -198,12 +212,12 @@ public class Controller {
         {
             System.out.println("Guanyador: " + btn7.getText());
             if (btn7.getText().equals("X")) {
-                turnoPlayer.setText("Guanyador: X" );
+                ganador.setText("Guanyador: X" );
 
             } else if (btn7.getText().equals("O")) {
-                turnoPlayer.setText("Guanyador: O");
+                ganador.setText("Guanyador: O");
             }
-            z = 1;
+            x = 1;
             return;
 
         } else if ((btn3.getText().equals(btn6.getText()) &&
@@ -212,22 +226,22 @@ public class Controller {
         {
             System.out.println("Guanyador: " + btn3.getText());
             if (btn3.getText().equals("X")) {
-                turnoPlayer.setText("Guanyador: X");
+                ganador.setText("Guanyador: X");
             } else if (btn3.getText().equals("O")) {
-                turnoPlayer.setText("Guanyador: O" );
+                ganador.setText("Guanyador: O" );
             }
-            z = 1;
+            x = 1;
             return;
 
         } else if (!btn1.getText().equals("") && !btn2.getText().equals("") && !btn3.getText().equals("")
                 && !btn4.getText().equals("") && !btn5.getText().equals("") && !btn6.getText().equals("")
                 && !btn7.getText().equals("") && !btn8.getText().equals("") && !btn9.getText().equals(""))
         {
-            z = 1;
+            x = 1;
             return;
         }
-        turnoPlayer.setText("Iguals");
-        z = 0;
+        ganador.setText("Iguals");
+        x = 0;
     }
     public void BorrarTaula() {
         for (Button AllButton : AllButtons) {
